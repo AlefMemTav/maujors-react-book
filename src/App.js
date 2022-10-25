@@ -1,63 +1,25 @@
-import React, {Component} from "react";
+import React from "react";
 
-import TableHead from './components/TableHead';
-import TableFoot from './components/TableFoot';
-import TableBody from './components/TableBody';
-
-class App extends Component {
-  state = {
-    books: []
-  };
-
-  componentDidMount(){
-    fetch("/api/livros.json")
-    .then(response => response.json())
-    .then(books => this.setState({books}))
-    .catch(function(error){
-      console.log("Erro na requisição");
-    })
-    .finally(function(){
-      console.log("Sempre retorna");
-    });
-  }
-
-  handleRemoveRow = (id) => {
-    const books = this.state.books.filter(l => l.id !== id);
-    this.setState({books});
-    console.log("Botão clicado");
-  }
-
-  handleOrdenarCrescente = (title) =>{
-    const books = this.state.books.sort((a, b) =>
-    a.title < b.title ? -1 : 0
-    );
-    this.setState({books});
-  };
-
-  handleOrdenarDecrescente = (title) =>{
-    const books = this.state.books.sort((a, b) =>
-    a.title < b.title ? -1 : 0
-    );
-    books.reverse();
-    this.setState({books});
-  };
-
-
-  render(){
-    return (
-      <table className="table">
-        <TableHead
-          ordenarCrescente={this.handleOrdenarCrescente}
-          ordenarDecrescente={this.handleOrdenarDecrescente}
-         />
-        <TableBody 
-          books = {this.state.books}
-          removeRow = {this.handleRemoveRow}
-        />
-        <TableFoot nmbBooks = {this.state.books.length} />
-      </table>
-    );
-  }
+function App() {
+  return (
+    <>
+      <header className="topo">
+        <h1 className="logo"></h1>
+        <ul>
+          <li>
+            <a href="">Navegação</a>
+          </li>
+        </ul>
+      </header>
+      <main className="principal">
+        <h2>Últimos Lançamentos</h2>
+        <div className="card">Card</div>
+      </main>
+      <footer className="rodape">
+        <p>Conteúdos cedidos pela Editora Novatec &#8212; Copyright 2020</p>
+      </footer>
+    </>
+  );
 }
 
 export default App;
