@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Rodape = () => {
   return (
@@ -6,8 +6,8 @@ const Rodape = () => {
       <p>
         Conteúdos cedidos pela Editora Novatec &#8212; &copy; Copyright 2020
       </p>
-    </footer> 
-  )
-}
+    </footer>
+  );
+};
 
-export default Rodape
+export default Rodape;

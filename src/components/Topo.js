@@ -1,6 +1,6 @@
-import React from 'react'
-import Logo from './Logo'
-import Navegacao from './Navegacao'
+import React from "react";
+import Logo from "./Logo";
+import Navegacao from "./Navegacao";
 
 const Topo = () => {
   return (
@@ -8,7 +8,7 @@ const Topo = () => {
       <Logo />
       <Navegacao />
     </header>
-  )
-}
+  );
+};
 
-export default Topo
+export default Topo;
